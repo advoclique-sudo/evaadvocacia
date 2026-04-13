@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Oliveira & Barata Advocacia — Defesa criminal estratégica, técnica e sigilosa. Atuação rápida para proteger sua liberdade e seu futuro." />
+<title>Oliveira & Barata Advocacia — Defesa Criminal Estratégica</title>
+
+<!-- Fontes -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<link rel="icon" type="image/png" href="logo-white.png" />
+
+<style>
+  /* ==========================================================
+     DESIGN TOKENS — Preto, Branco e Vermelho (Criminal)
+     ========================================================== */
+  :root {
+    /* Cores primárias */
+    --color-black:      #0A0A0A;
+    --color-black-soft: #161616;
+    --color-ink:        #1E1E1E;
+    --color-white:      #FFFFFF;
+    --color-off:        #F5F3F1;   /* Off-white / bege muito sutil */
+
+    /* Vermelho criminal / justiça */
+    --color-red:        #B3121F;   /* Vermelho sangue sóbrio */
+    --color-red-deep:   #8E0C16;
+    --color-red-blood:  #5A0710;
+
+    /* Cinzas */
+    --color-gray-900:   #111111;
+    --color-gray-800:   #2A2A2A;
+    --color-gray-700:   #3A3A3A;
+    --color-gray-500:   #6B6B6B;
+    --color-gray-300:   #B8B8B8;
+    --color-gray-200:   #DCDCDC;
+    --color-gray-100:   #EEEEEE;
+
+    /* Tipografia */
+    --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --font-sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* Grid 8px */
+    --s-1: 8px;  --s-2: 16px; --s-3: 24px; --s-4: 32px;
+    --s-5: 40px; --s-6: 48px; --s-8: 64px; --s-10: 80px;
+    --s-12: 96px; --s-16: 128px;
+
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 14px;
+
+    --shadow-sm: 0 2px 10px rgba(0,0,0,.08);
+    --shadow-md: 0 14px 40px rgba(0,0,0,.18);
+    --shadow-lg: 0 28px 80px rgba(0,0,0,.35);
+    --shadow-red: 0 12px 40px rgba(179,18,31,.35);
+
+    --transition: 220ms cubic-bezier(.2,.8,.2,1);
+  }
+
+  /* ==========================================================
+     RESET / BASE
+     ========================================================== */
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    color: var(--color-gray-800);
+    background: var(--color-white);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    color: var(--color-black);
+    line-height: 1.1;
+    margin: 0 0 var(--s-2);
+    letter-spacing: -.015em;
+  }
+  h1 { font-size: clamp(2.4rem, 5vw, 4.25rem); font-weight: 800; }
+  h2 { font-size: clamp(1.9rem, 3.4vw, 3rem); }
+  h3 { font-size: clamp(1.2rem, 1.8vw, 1.5rem); }
+  p  { margin: 0 0 var(--s-2); }
+  strong { color: var(--color-black); font-weight: 700; }
+
+  .container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 var(--s-3);
+  }
+  section { padding: var(--s-12) 0; }
+  @media (max-width: 768px) { section { padding: var(--s-8) 0; } }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-sans);
+    font-size: .78rem;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: var(--color-red);
+    font-weight: 700;
+    margin-bottom: var(--s-2);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 28px; height: 2px;
+    background: var(--color-red);
+    display: inline-block;
+  }
+  .eyebrow.on-dark { color: var(--color-red); }
+  .eyebrow.on-dark::before { background: var(--color-red); }
+
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: var(--color-red);
+    margin: var(--s-2) 0 var(--s-3);
+  }
+  .section-header { max-width: 780px; margin-bottom: var(--s-6); }
+  .section-header.center { margin-left: auto; margin-right: auto; text-align: center; }
+  .section-header.center .eyebrow { justify-content: center; }
+  .section-header.center .divider { margin-left: auto; margin-right: auto; }
+  .section-header h2 .accent { color: var(--color-red); }
+
+  /* ==========================================================
+     BOTÕES
+     ========================================================== */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 17px 30px;
+    font-family: var(--font-sans);
+    font-size: .92rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    border-radius: var(--radius-sm);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all var(--transition);
+    text-align: center;
+    line-height: 1;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+  .btn-primary {
+    background: var(--color-red);
+    color: var(--color-white);
+    border-color: var(--color-red);
+  }
+  .btn-primary:hover {
+    background: var(--color-red-deep);
+    border-color: var(--color-red-deep);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-red);
+  }
+
+  .btn-dark {
+    background: var(--color-black);
+    color: var(--color-white);
+    border-color: var(--color-black);
+  }
+  .btn-dark:hover {
+    background: var(--color-red);
+    border-color: var(--color-red);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-red);
+  }
+
+  .btn-outline-white {
+    background: transparent;
+    color: var(--color-white);
+    border-color: rgba(255,255,255,.5);
+  }
+  .btn-outline-white:hover {
+    background: var(--color-white);
+    color: var(--color-black);
+    border-color: var(--color-white);
+  }
+
+  .btn-outline-dark {
+    background: transparent;
+    color: var(--color-black);
+    border-color: var(--color-black);
+  }
+  .btn-outline-dark:hover {
+    background: var(--color-black);
+    color: var(--color-white);
+  }
+
+  .btn-block { width: 100%; justify-content: center; }
+
+  /* ==========================================================
+     HEADER
+     ========================================================== */
+  .site-header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    background: rgba(10,10,10,.92);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid rgba(179,18,31,.25);
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--color-white);
+  }
+  .brand-logo {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    filter: drop-shadow(0 2px 6px rgba(179,18,31,.35));
+  }
+  .brand-logo img {
+    width: 100%; height: 100%;
+    object-fit: contain;
+  }
+  .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+  .brand-name {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    letter-spacing: .05em;
+    color: var(--color-white);
+    font-weight: 700;
+  }
+  .brand-sub {
+    font-size: .65rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--color-red);
+    font-weight: 600;
+  }
+  .nav-links {
+    display: flex; gap: var(--s-4);
+    list-style: none; padding: 0; margin: 0;
+  }
+  .nav-links a {
+    color: var(--color-gray-200);
+    font-size: .85rem;
+    font-weight: 500;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    transition: color var(--transition);
+  }
+  .nav-links a:hover { color: var(--color-red); }
+  .nav-cta .btn { padding: 13px 22px; font-size: .8rem; }
+  @media (max-width: 960px) { .nav-links { display: none; } }
+  @media (max-width: 520px) {
+    .brand-text { display: none; }
+    .nav-cta .btn span.label-full { display: none; }
+  }
+
+  /* ==========================================================
+     HERO
+     ========================================================== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    padding: calc(var(--s-12) + 60px) 0 var(--s-10);
+    color: var(--color-white);
+    overflow: hidden;
+    background:
+      linear-gradient(120deg, rgba(10,10,10,.94) 0%, rgba(10,10,10,.82) 55%, rgba(90,7,16,.75) 100%),
+      url('https://images.unsplash.com/photo-1589994965851-a8f479c573a9?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    background-color: var(--color-black);
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(90deg, rgba(255,255,255,.02) 0 1px, transparent 1px 80px);
+    pointer-events: none;
+    opacity: .6;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; width: 6px;
+    background: linear-gradient(180deg, var(--color-red), transparent);
+    z-index: 2;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: var(--s-8);
+    align-items: center;
+    position: relative;
+    z-index: 3;
+  }
+  @media (max-width: 960px) {
+    .hero-grid { grid-template-columns: 1fr; gap: var(--s-5); }
+  }
+
+  .hero h1 {
+    color: var(--color-white);
+    margin-bottom: var(--s-3);
+  }
+  .hero h1 .accent { color: var(--color-red); font-style: italic; }
+  .hero .lead {
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+    color: var(--color-gray-200);
+    max-width: 580px;
+    margin-bottom: var(--s-4);
+  }
+  .hero-bullets {
+    list-style: none; padding: 0; margin: 0 0 var(--s-4);
+    display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-4);
+  }
+  .hero-bullets li {
+    display: flex; align-items: center; gap: 10px;
+    font-size: .95rem;
+    color: var(--color-white);
+    font-weight: 500;
+  }
+  .hero-bullets .check {
+    width: 22px; height: 22px;
+    background: var(--color-red);
+    border-radius: 50%;
+    display: grid; place-items: center;
+    flex-shrink: 0;
+  }
+  .hero-bullets .check svg { width: 13px; height: 13px; color: #fff; }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+
+  /* Card lateral hero */
+  .hero-card {
+    background: linear-gradient(160deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: var(--radius-lg);
+    padding: var(--s-4);
+    backdrop-filter: blur(8px);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--color-red);
+  }
+  .hero-card .kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-red);
+    font-size: .72rem;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    margin-bottom: var(--s-2);
+    font-weight: 700;
+  }
+  .hero-card .kicker .pulse {
+    width: 8px; height: 8px; background: var(--color-red); border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(179,18,31,.7);
+    animation: livePulse 1.8s infinite;
+  }
+  @keyframes livePulse {
+    0%   { box-shadow: 0 0 0 0 rgba(179,18,31,.7); }
+    70%  { box-shadow: 0 0 0 12px rgba(179,18,31,0); }
+    100% { box-shadow: 0 0 0 0 rgba(179,18,31,0); }
+  }
+  .hero-card h3 {
+    color: var(--color-white);
+    margin-bottom: var(--s-2);
+    font-family: var(--font-serif);
+  }
+  .hero-card ul { list-style: none; padding: 0; margin: 0; }
+  .hero-card li {
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    color: var(--color-gray-200);
+    display: flex; align-items: center; gap: 12px;
+    font-size: .94rem;
+  }
+  .hero-card li:last-child { border-bottom: none; }
+  .hero-card li .dash {
+    width: 16px; height: 2px; background: var(--color-red); flex-shrink: 0;
+  }
+
+  /* ==========================================================
+     DOR
+     ========================================================== */
+  .pain {
+    background: var(--color-off);
+    position: relative;
+  }
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--s-3);
+    margin-top: var(--s-5);
+  }
+  @media (max-width: 900px) { .pain-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 500px) { .pain-grid { grid-template-columns: 1fr; } }
+  .pain-card {
+    background: var(--color-white);
+    border-left: 4px solid var(--color-red);
+    padding: var(--s-4) var(--s-3);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition);
+  }
+  .pain-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-left-color: var(--color-black);
+  }
+  .pain-card .pain-icon {
+    width: 38px; height: 38px;
+    background: var(--color-black);
+    color: var(--color-red);
+    display: grid; place-items: center;
+    border-radius: 50%;
+    margin-bottom: var(--s-2);
+  }
+  .pain-card .pain-icon svg { width: 20px; height: 20px; stroke-width: 2; }
+  .pain-card h4 {
+    font-family: var(--font-sans);
+    font-size: 1.02rem;
+    color: var(--color-black);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .pain-card p { font-size: .9rem; color: var(--color-gray-700); margin: 0; }
+  .pain-cta { text-align: center; margin-top: var(--s-5); }
+
+  /* ==========================================================
+     ÁREAS DE ATUAÇÃO
+     ========================================================== */
+  .areas { background: var(--color-white); }
+  .areas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-3);
+    margin-top: var(--s-5);
+  }
+  @media (max-width: 900px) { .areas-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .areas-grid { grid-template-columns: 1fr; } }
+
+  .area-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-md);
+    padding: var(--s-4);
+    transition: all var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+  .area-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 4px;
+    background: var(--color-red);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform var(--transition);
+  }
+  .area-card:hover {
+    border-color: var(--color-black);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-6px);
+  }
+  .area-card:hover::before { transform: scaleY(1); }
+  .area-icon {
+    width: 60px; height: 60px;
+    border-radius: var(--radius-sm);
+    background: var(--color-black);
+    color: var(--color-red);
+    display: grid; place-items: center;
+    margin-bottom: var(--s-3);
+    transition: all var(--transition);
+  }
+  .area-card:hover .area-icon {
+    background: var(--color-red);
+    color: var(--color-white);
+  }
+  .area-icon svg { width: 28px; height: 28px; stroke-width: 1.6; }
+  .area-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    margin-bottom: var(--s-1);
+  }
+  .area-card p { font-size: .93rem; color: var(--color-gray-700); margin: 0; }
+
+  /* ==========================================================
+     DIFERENCIAIS
+     ========================================================== */
+  .differentials {
+    background: var(--color-black);
+    color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+  }
+  .differentials::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 6px;
+    background: var(--color-red);
+  }
+  .differentials::after {
+    content: "";
+    position: absolute;
+    top: -30%; right: -15%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(179,18,31,.28), transparent 70%);
+    pointer-events: none;
+  }
+  .differentials h2 { color: var(--color-white); }
+  .differentials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-4);
+    margin-top: var(--s-5);
+    position: relative;
+    z-index: 2;
+  }
+  @media (max-width: 900px) { .differentials-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .differentials-grid { grid-template-columns: 1fr; } }
+  .diff-item {
+    padding: var(--s-3);
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: var(--radius-md);
+    transition: all var(--transition);
+  }
+  .diff-item:hover {
+    border-color: var(--color-red);
+    background: rgba(179,18,31,.08);
+    transform: translateY(-4px);
+  }
+  .diff-num {
+    font-family: var(--font-serif);
+    color: var(--color-red);
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    display: block;
+    margin-bottom: var(--s-2);
+  }
+  .diff-item h4 {
+    color: var(--color-white);
+    font-family: var(--font-sans);
+    font-size: 1.08rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .diff-item p { color: var(--color-gray-300); font-size: .92rem; margin: 0; line-height: 1.6; }
+
+  /* ==========================================================
+     SOBRE
+     ========================================================== */
+  .about { background: var(--color-white); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-8);
+    align-items: center;
+  }
+  @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: var(--s-5); } }
+
+  .about-photo {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    background: var(--color-black);
+  }
+  .about-photo img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: grayscale(100%) contrast(1.1) brightness(.92);
+    transition: filter var(--transition);
+  }
+  .about-photo:hover img { filter: grayscale(40%) contrast(1.05); }
+  .about-photo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,.6));
+    z-index: 1;
+    pointer-events: none;
+  }
+  .about-photo::after {
+    content: "";
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 6px; height: 100%;
+    background: var(--color-red);
+    z-index: 2;
+  }
+  .about-badge {
+    position: absolute;
+    bottom: var(--s-3); left: var(--s-3);
+    background: var(--color-red);
+    color: var(--color-white);
+    padding: 12px 20px;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: .82rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    z-index: 3;
+  }
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-3);
+    margin-top: var(--s-4);
+    padding-top: var(--s-4);
+    border-top: 2px solid var(--color-black);
+  }
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--color-red);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: .75rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--color-gray-700);
+    margin-top: 6px;
+    font-weight: 600;
+  }
+
+  /* ==========================================================
+     URGÊNCIA
+     ========================================================== */
+  .urgency {
+    background:
+      linear-gradient(135deg, rgba(10,10,10,.95) 0%, rgba(90,7,16,.88) 100%),
+      url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1920&q=80') center/cover;
+    color: var(--color-white);
+    text-align: center;
+    position: relative;
+  }
+  .urgency::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--color-red);
+  }
+  .urgency h2 {
+    color: var(--color-white);
+    max-width: 820px;
+    margin: 0 auto var(--s-2);
+    font-weight: 800;
+  }
+  .urgency h2 .accent { color: var(--color-red); font-style: italic; }
+  .urgency p {
+    color: var(--color-gray-200);
+    max-width: 640px;
+    margin: 0 auto var(--s-4);
+    font-size: 1.08rem;
+  }
+  .urgency .ctas { display: flex; gap: var(--s-2); justify-content: center; flex-wrap: wrap; }
+
+  /* ==========================================================
+     PROVA SOCIAL
+     ========================================================== */
+  .social-proof { background: var(--color-off); }
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-3);
+    margin-top: var(--s-5);
+  }
+  @media (max-width: 900px) { .testimonials { grid-template-columns: 1fr; } }
+  .testimonial {
+    background: var(--color-white);
+    padding: var(--s-4);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    border-top: 3px solid var(--color-red);
+  }
+  .testimonial::before {
+    content: "\201C";
+    position: absolute;
+    top: -4px; left: 20px;
+    font-family: var(--font-serif);
+    font-size: 5rem;
+    color: var(--color-red);
+    line-height: 1;
+    font-weight: 900;
+  }
+  .testimonial p {
+    font-style: italic;
+    color: var(--color-gray-800);
+    margin-bottom: var(--s-3);
+    font-size: .96rem;
+    position: relative;
+    padding-top: var(--s-2);
+  }
+  .testimonial-author {
+    display: flex; align-items: center; gap: 12px;
+    padding-top: var(--s-2);
+    border-top: 1px solid var(--color-gray-200);
+  }
+  .author-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--color-black);
+    color: var(--color-red);
+    display: grid; place-items: center;
+    font-weight: 700;
+    font-family: var(--font-serif);
+    font-size: .95rem;
+  }
+  .author-name { font-weight: 700; color: var(--color-black); font-size: .95rem; }
+  .author-role { font-size: .8rem; color: var(--color-gray-700); }
+  .stars { color: var(--color-red); margin-bottom: 10px; letter-spacing: 3px; font-size: 1rem; }
+
+  /* ==========================================================
+     CONTATO
+     ========================================================== */
+  .contact { background: var(--color-white); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--s-6);
+    margin-top: var(--s-5);
+  }
+  @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: var(--s-5); } }
+
+  .contact-info-list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--s-2); }
+  .contact-info-list li {
+    display: flex; gap: var(--s-2); align-items: flex-start;
+    padding: var(--s-2);
+    background: var(--color-off);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid transparent;
+    transition: all var(--transition);
+  }
+  .contact-info-list li:hover {
+    background: var(--color-white);
+    box-shadow: var(--shadow-sm);
+    border-left-color: var(--color-red);
+  }
+  .contact-icon {
+    width: 44px; height: 44px;
+    background: var(--color-black);
+    color: var(--color-red);
+    border-radius: var(--radius-sm);
+    display: grid; place-items: center;
+    flex-shrink: 0;
+    transition: all var(--transition);
+  }
+  .contact-info-list li:hover .contact-icon {
+    background: var(--color-red);
+    color: var(--color-white);
+  }
+  .contact-icon svg { width: 20px; height: 20px; stroke-width: 1.8; }
+  .contact-info-list .label {
+    font-size: .72rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--color-gray-500);
+    font-weight: 700;
+  }
+  .contact-info-list .value {
+    color: var(--color-black);
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .contact-info-list a.value:hover { color: var(--color-red); }
+
+  .contact-form {
+    background: var(--color-black);
+    color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--s-5);
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-form::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--color-red);
+  }
+  .contact-form h3 {
+    color: var(--color-white);
+    margin-bottom: var(--s-3);
+  }
+  .form-field { margin-bottom: var(--s-2); }
+  .form-field label {
+    display: block;
+    font-size: .78rem;
+    font-weight: 700;
+    color: var(--color-red);
+    margin-bottom: 8px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  .form-field input,
+  .form-field textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid rgba(255,255,255,.15);
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: .95rem;
+    background: rgba(255,255,255,.05);
+    color: var(--color-white);
+    transition: all var(--transition);
+  }
+  .form-field input::placeholder,
+  .form-field textarea::placeholder { color: var(--color-gray-500); }
+  .form-field input:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-color: var(--color-red);
+    background: rgba(255,255,255,.08);
+    box-shadow: 0 0 0 3px rgba(179,18,31,.2);
+  }
+  .form-field textarea { min-height: 130px; resize: vertical; }
+  .form-note {
+    font-size: .8rem;
+    color: var(--color-gray-300);
+    margin-top: var(--s-2);
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  /* ==========================================================
+     FOOTER
+     ========================================================== */
+  .site-footer {
+    background: #060606;
+    color: var(--color-gray-300);
+    padding: var(--s-10) 0 var(--s-3);
+    position: relative;
+  }
+  .site-footer::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--color-red);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
+    gap: var(--s-5);
+    margin-bottom: var(--s-5);
+  }
+  @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr; } }
+
+  .footer-brand .brand-name { color: var(--color-white); font-size: 1.3rem; }
+  .footer-brand p {
+    margin-top: var(--s-2);
+    font-size: .9rem;
+    color: var(--color-gray-300);
+    max-width: 320px;
+  }
+  .footer-col h5 {
+    color: var(--color-white);
+    font-family: var(--font-sans);
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    margin: 0 0 var(--s-2);
+    position: relative;
+    padding-left: 16px;
+  }
+  .footer-col h5::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 50%; transform: translateY(-50%);
+    width: 8px; height: 2px;
+    background: var(--color-red);
+  }
+  .footer-col ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  .footer-col a { font-size: .9rem; color: var(--color-gray-300); transition: color var(--transition); }
+  .footer-col a:hover { color: var(--color-red); }
+  .footer-col address {
+    font-style: normal;
+    font-size: .9rem;
+    line-height: 1.7;
+    color: var(--color-gray-300);
+  }
+  .footer-bottom {
+    padding-top: var(--s-3);
+    border-top: 1px solid rgba(255,255,255,.06);
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-2);
+    font-size: .8rem;
+    color: var(--color-gray-500);
+  }
+  .legal-notice {
+    margin-top: var(--s-2);
+    padding: var(--s-2);
+    background: rgba(255,255,255,.02);
+    border-left: 3px solid var(--color-red);
+    font-size: .78rem;
+    line-height: 1.65;
+    color: var(--color-gray-300);
+  }
+  .legal-notice strong { color: var(--color-red); }
+
+  /* ==========================================================
+     WHATSAPP FLUTUANTE
+     ========================================================== */
+  .wa-float {
+    position: fixed;
+    bottom: var(--s-3);
+    right: var(--s-3);
+    width: 60px; height: 60px;
+    background: #25D366;
+    color: #FFF;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    box-shadow: 0 8px 24px rgba(37,211,102,.45);
+    z-index: 90;
+    animation: waPulse 2s infinite;
+    transition: transform var(--transition);
+  }
+  .wa-float:hover { transform: scale(1.08); }
+  .wa-float svg { width: 32px; height: 32px; }
+  @keyframes waPulse {
+    0%   { box-shadow: 0 8px 24px rgba(37,211,102,.4), 0 0 0 0 rgba(37,211,102,.5); }
+    70%  { box-shadow: 0 8px 24px rgba(37,211,102,.4), 0 0 0 20px rgba(37,211,102,0); }
+    100% { box-shadow: 0 8px 24px rgba(37,211,102,.4), 0 0 0 0 rgba(37,211,102,0); }
+  }
+
+  /* Reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="container nav">
+    <a href="#top" class="brand" aria-label="Oliveira & Barata Advocacia">
+      <div class="brand-logo">
+        <img src="logo-white.png" alt="Oliveira & Barata — monograma" />
+      </div>
+      <div class="brand-text">
+        <span class="brand-name">Oliveira &amp; Barata</span>
+        <span class="brand-sub">Advocacia Criminal</span>
+      </div>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#areas">Atuação</a></li>
+        <li><a href="#diferenciais">Diferenciais</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#depoimentos">Clientes</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="https://wa.me/5591992433543?text=Ol%C3%A1%2C%20preciso%20de%20defesa%20criminal%20urgente." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.8 11.8 0 0 0 12 0C5.37 0 0 5.37 0 12a11.9 11.9 0 0 0 1.64 6.06L0 24l6.12-1.6A11.9 11.9 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.22-3.48-8.52ZM12 22a9.94 9.94 0 0 1-5.07-1.38l-.36-.22-3.63.95.97-3.54-.24-.37A9.94 9.94 0 1 1 22 12a9.93 9.93 0 0 1-10 10Z"/></svg>
+        <span class="label-full">Atendimento 24h</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">Advocacia Criminal &middot; Plantão 24h</span>
+      <h1>Defesa Criminal <span class="accent">Estratégica</span> para Proteger sua <span class="accent">Liberdade</span> e seu Futuro</h1>
+      <p class="lead">Atuação <strong>rápida, técnica e sigilosa</strong> em casos criminais. Quando a sua liberdade está em jogo, cada minuto importa — estamos prontos para agir ao seu lado.</p>
+      <ul class="hero-bullets">
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Atendimento imediato</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Defesa técnica especializada</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Sigilo absoluto</li>
+      </ul>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="https://wa.me/5591992433543?text=Ol%C3%A1%2C%20preciso%20falar%20com%20um%20advogado%20criminalista." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.8 11.8 0 0 0 12 0C5.37 0 0 5.37 0 12a11.9 11.9 0 0 0 1.64 6.06L0 24l6.12-1.6A11.9 11.9 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.22-3.48-8.52Z"/></svg>
+          Falar com Advogado Agora
+        </a>
+        <a class="btn btn-outline-white" href="#areas">Ver Áreas de Atuação</a>
+      </div>
+    </div>
+
+    <aside class="hero-card reveal" aria-label="Emergências criminais">
+      <div class="kicker"><span class="pulse"></span>Plantão ativo</div>
+      <h3>Emergências Criminais</h3>
+      <ul>
+        <li><span class="dash"></span>Prisão em flagrante</li>
+        <li><span class="dash"></span>Audiência de custódia</li>
+        <li><span class="dash"></span>Intimação policial</li>
+        <li><span class="dash"></span>Habeas Corpus urgente</li>
+        <li><span class="dash"></span>Investigação em curso</li>
+      </ul>
+      <a class="btn btn-primary btn-block" href="https://wa.me/5591992433543" target="_blank" rel="noopener" style="margin-top:20px;">Atendimento 24h</a>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ DOR ============ -->
+<section class="pain" id="dor">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="eyebrow">Situações Críticas</span>
+      <h2>Você pode estar correndo <span class="accent">sérios riscos</span> sem orientação jurídica</h2>
+      <div class="divider"></div>
+      <p>Em direito criminal, o tempo é decisivo. Uma decisão errada nas primeiras horas pode comprometer sua defesa, sua reputação e sua liberdade. Identifique sua situação:</p>
+    </div>
+
+    <div class="pain-grid reveal">
+      <article class="pain-card">
+        <div class="pain-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </div>
+        <h4>Investigação Criminal</h4>
+        <p>Inquéritos em curso exigem estratégia desde a primeira oitiva. Silêncio técnico pode salvar o caso.</p>
+      </article>
+      <article class="pain-card">
+        <div class="pain-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+        </div>
+        <h4>Intimação Recebida</h4>
+        <p>Comparecer sem advogado é um erro grave. Cada palavra pode ser usada contra você.</p>
+      </article>
+      <article class="pain-card">
+        <div class="pain-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h4>Prisão Inesperada</h4>
+        <p>Flagrante ou preventiva: atuação em até 24h pode reverter a custódia e garantir liberdade.</p>
+      </article>
+      <article class="pain-card">
+        <div class="pain-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h4>Acusações Injustas</h4>
+        <p>Reputação, emprego e família em jogo. Defesa técnica é o caminho para provar sua inocência.</p>
+      </article>
+    </div>
+
+    <div class="pain-cta reveal">
+      <a class="btn btn-dark" href="https://wa.me/5591992433543?text=Preciso%20de%20defesa%20imediata." target="_blank" rel="noopener">
+        Preciso de Defesa Imediata
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ÁREAS DE ATUAÇÃO ============ -->
+<section class="areas" id="areas">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="eyebrow">Atuação Especializada</span>
+      <h2>Áreas de Atuação</h2>
+      <div class="divider"></div>
+      <p>Experiência consolidada em casos complexos de direito penal, com estratégia personalizada para cada cliente.</p>
+    </div>
+
+    <div class="areas-grid reveal">
+      <article class="area-card">
+        <div class="area-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M7 6l1 14h8l1-14M10 3h4"/></svg>
+        </div>
+        <h3>Processos Criminais</h3>
+        <p>Defesa completa em ações penais, do inquérito à sentença, em todas as instâncias.</p>
+      </article>
+
+      <article class="area-card">
+        <div class="area-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M6 6l2 2M2 12h4M6 18l2-2M12 22v-4M18 18l-2-2M22 12h-4M18 6l-2 2"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>Audiência de Custódia</h3>
+        <p>Acompanhamento em até 24 horas da prisão para garantir direitos e buscar liberdade imediata.</p>
+      </article>
+
+      <article class="area-card">
+        <div class="area-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L4 6 V12 C4 17 7 21 12 22 C17 21 20 17 20 12 V6 Z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <h3>Habeas Corpus</h3>
+        <p>Medidas urgentes para cessar constrangimento ilegal e proteger a liberdade de locomoção.</p>
+      </article>
+
+      <article class="area-card">
+        <div class="area-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 10h20M6 14h4M14 14h4"/></svg>
+        </div>
+        <h3>Crimes Digitais</h3>
+        <p>Defesa em crimes cibernéticos, fraudes online, invasão de dispositivos e exposição indevida.</p>
+      </article>
+
+      <article class="area-card">
+        <div class="area-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/><circle cx="12" cy="14" r="1.5"/></svg>
+        </div>
+        <h3>Crimes Patrimoniais</h3>
+        <p>Atuação em casos de furto, roubo, estelionato, receptação e demais crimes contra o patrimônio.</p>
+      </article>
+
+      <article class="area-card">
+        <div class="area-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/></svg>
+        </div>
+        <h3>Crimes contra a Pessoa</h3>
+        <p>Defesa em casos de lesão corporal, ameaça, homicídio, violência doméstica e afins.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIFERENCIAIS ============ -->
+<section class="differentials" id="diferenciais">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="eyebrow on-dark">Por Que Nos Escolher</span>
+      <h2>Por que escolher <span style="color: var(--color-red);">Oliveira &amp; Barata</span>?</h2>
+      <div class="divider"></div>
+      <p style="color: var(--color-gray-300); max-width: 680px;">Combinamos excelência técnica, agilidade e proximidade com o cliente. Um escritório construído sobre <strong style="color:var(--color-white);">resultados</strong> e <strong style="color:var(--color-white);">confiança</strong>.</p>
+    </div>
+
+    <div class="differentials-grid reveal">
+      <div class="diff-item">
+        <span class="diff-num">01</span>
+        <h4>Atendimento Ágil e Humanizado</h4>
+        <p>Resposta em minutos. Linguagem clara. Acompanhamento próximo em cada etapa do processo.</p>
+      </div>
+      <div class="diff-item">
+        <span class="diff-num">02</span>
+        <h4>Estratégia Personalizada</h4>
+        <p>Cada caso é único. Elaboramos teses e linhas de defesa sob medida para cada cliente.</p>
+      </div>
+      <div class="diff-item">
+        <span class="diff-num">03</span>
+        <h4>Experiência em Direito Penal</h4>
+        <p>Equipe especializada, com histórico comprovado em casos de alta complexidade.</p>
+      </div>
+      <div class="diff-item">
+        <span class="diff-num">04</span>
+        <h4>Atuação Preventiva e Contenciosa</h4>
+        <p>Evitamos processos antes que surjam e defendemos com rigor quando eles chegam.</p>
+      </div>
+      <div class="diff-item">
+        <span class="diff-num">05</span>
+        <h4>Sigilo e Discrição Total</h4>
+        <p>Protegemos sua imagem, sua privacidade e todas as informações compartilhadas.</p>
+      </div>
+      <div class="diff-item">
+        <span class="diff-num">06</span>
+        <h4>Plantão 24 Horas</h4>
+        <p>Emergências criminais não esperam horário comercial. Estamos disponíveis quando você precisar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOBRE ============ -->
+<section class="about" id="sobre">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <img src="https://images.unsplash.com/photo-1589994965851-a8f479c573a9?auto=format&fit=crop&w=900&q=80" alt="Advogados em escritório profissional" loading="lazy" />
+        <div class="about-badge">Defesa Criminal de Excelência</div>
+      </div>
+
+      <div class="reveal">
+        <span class="eyebrow">Sobre o Escritório</span>
+        <h2>Compromisso com a justiça,<br/>dedicação ao cliente</h2>
+        <div class="divider"></div>
+        <p><strong>Oliveira &amp; Barata Advocacia</strong> atua com excelência na defesa criminal, oferecendo suporte jurídico completo em momentos críticos. Nossa missão é transformar momentos de tensão em caminhos seguros, com estratégia, ética e resultados concretos.</p>
+        <p>Atuamos em todas as fases do processo penal — da investigação preliminar até os tribunais superiores — sempre priorizando o contato direto com nossos clientes, o rigor técnico e a <strong>preservação total do sigilo</strong>.</p>
+
+        <div class="about-stats">
+          <div>
+            <div class="stat-num">500+</div>
+            <div class="stat-label">Casos Atendidos</div>
+          </div>
+          <div>
+            <div class="stat-num">24h</div>
+            <div class="stat-label">Plantão Jurídico</div>
+          </div>
+          <div>
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Sigilo Profissional</div>
+          </div>
+        </div>
+
+        <div style="margin-top: var(--s-4);">
+          <a class="btn btn-dark" href="#contato">Agendar Consulta</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ URGÊNCIA ============ -->
+<section class="urgency">
+  <div class="container reveal">
+    <span class="eyebrow" style="color: var(--color-red); justify-content: center; display: inline-flex;">Ação Imediata</span>
+    <h2>Em casos criminais, <span class="accent">o tempo</span> pode definir o resultado.</h2>
+    <p>Não espere a situação se agravar. Cada hora conta quando sua liberdade está em jogo. Fale com um advogado agora mesmo.</p>
+    <div class="ctas">
+      <a class="btn btn-primary" href="https://wa.me/5591992433543?text=URGENTE%20-%20Preciso%20falar%20com%20um%20advogado%20criminalista%20agora." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20"><path d="M20.52 3.48A11.8 11.8 0 0 0 12 0C5.37 0 0 5.37 0 12a11.9 11.9 0 0 0 1.64 6.06L0 24l6.12-1.6A11.9 11.9 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.22-3.48-8.52Z"/></svg>
+        Falar com Advogado Agora
+      </a>
+      <a class="btn btn-outline-white" href="https://wa.me/5591992433543" target="_blank" rel="noopener">WhatsApp: (91) 99243-3543</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEPOIMENTOS ============ -->
+<section class="social-proof" id="depoimentos">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="eyebrow">Prova Social</span>
+      <h2>O que dizem nossos <span class="accent">clientes</span></h2>
+      <div class="divider"></div>
+      <p>Histórias de pessoas que, em momentos delicados, confiaram em nossa equipe para proteger o que têm de mais valioso.</p>
+    </div>
+
+    <div class="testimonials reveal">
+      <article class="testimonial">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>Em um momento de total desespero, a atuação do escritório foi decisiva. Agilidade, técnica e humanidade em um só lugar. Recomendo sem hesitar.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">R.M.</div>
+          <div>
+            <div class="author-name">R. M.</div>
+            <div class="author-role">Atendido em audiência de custódia</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="testimonial">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>Profissionais extremamente preparados. Fui orientado desde a primeira intimação e o resultado superou minhas expectativas. Confiança total.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">J.S.</div>
+          <div>
+            <div class="author-name">J. S.</div>
+            <div class="author-role">Empresário — crime digital</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="testimonial">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>Transparência do início ao fim. O sigilo absoluto e a clareza nas explicações fazem toda a diferença em um processo criminal.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">A.L.</div>
+          <div>
+            <div class="author-name">A. L.</div>
+            <div class="author-role">Familiar de cliente atendido</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTATO ============ -->
+<section class="contact" id="contato">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="eyebrow">Contato Rápido</span>
+      <h2>Fale com nossa equipe</h2>
+      <div class="divider"></div>
+      <p>Atendimento sigiloso, ágil e especializado. Preencha o formulário ou entre em contato pelos canais abaixo.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="reveal">
+        <ul class="contact-info-list">
+          <li>
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.8 11.8 0 0 0 12 0C5.37 0 0 5.37 0 12a11.9 11.9 0 0 0 1.64 6.06L0 24l6.12-1.6A11.9 11.9 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.22-3.48-8.52Z"/></svg>
+            </div>
+            <div>
+              <div class="label">WhatsApp</div>
+              <a class="value" href="https://wa.me/5591992433543" target="_blank" rel="noopener">(91) 99243-3543</a>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            </div>
+            <div>
+              <div class="label">E-mail</div>
+              <a class="value" href="mailto:evadvg@hotmail.com">evadvg@hotmail.com</a>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="label">Endereço</div>
+              <div class="value" style="font-weight:500; font-size:.95rem; line-height:1.55;">Rua 13 de Maio, 191, Ed. Marc Jacob<br/>Sala 703 — Campina, CEP 66630-505</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <form class="contact-form reveal" onsubmit="handleSubmit(event)" aria-label="Formulário de contato">
+        <h3>Envie sua mensagem</h3>
+        <div class="form-field">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required />
+        </div>
+        <div class="form-field">
+          <label for="telefone">Telefone / WhatsApp</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required />
+        </div>
+        <div class="form-field">
+          <label for="descricao">Breve descrição da situação</label>
+          <textarea id="descricao" name="descricao" placeholder="Descreva brevemente seu caso. Todas as informações são tratadas com sigilo absoluto." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Enviar Solicitação Sigilosa</button>
+        <p class="form-note">🔒 Todas as informações são protegidas por sigilo profissional.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <div class="brand-logo"><img src="logo-white.png" alt="Oliveira & Barata monograma" /></div>
+          <div class="brand-text">
+            <span class="brand-name">Oliveira &amp; Barata</span>
+            <span class="brand-sub">Advocacia Criminal</span>
+          </div>
+        </div>
+        <p>Defesa criminal estratégica, técnica e sigilosa. Seu direito à liberdade em mãos experientes.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Navegação</h5>
+        <ul>
+          <li><a href="#areas">Áreas de Atuação</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contato</h5>
+        <ul>
+          <li><a href="https://wa.me/5591992433543" target="_blank" rel="noopener">WhatsApp: (91) 99243-3543</a></li>
+          <li><a href="mailto:evadvg@hotmail.com">evadvg@hotmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Endereço</h5>
+        <address>
+          Rua 13 de Maio, 191<br/>
+          Ed. Marc Jacob, Sala 703<br/>
+          Campina — CEP: 66630-505
+        </address>
+        <p style="margin-top: 12px; font-size: .85rem;"><strong style="color: var(--color-red);">OAB/PA</strong> 32.714</p>
+      </div>
+    </div>
+
+    <div class="legal-notice">
+      <strong>Aviso Legal:</strong> Este site possui caráter meramente informativo e não substitui a consulta direta com um advogado. O conteúdo aqui apresentado está em conformidade com o Provimento nº 205/2021 da OAB e demais normas éticas da advocacia. Não há captação ou mercantilização da profissão.
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; <span id="year">2026</span> Oliveira &amp; Barata Advocacia. Todos os direitos reservados.</div>
+      <div>Política de Privacidade &nbsp;|&nbsp; Termos de Uso</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ WhatsApp Fixo ============ -->
+<a class="wa-float" href="https://wa.me/5591992433543?text=Ol%C3%A1%2C%20gostaria%20de%20atendimento%20jur%C3%ADdico." target="_blank" rel="noopener" aria-label="Fale pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.8 11.8 0 0 0 12 0C5.37 0 0 5.37 0 12a11.9 11.9 0 0 0 1.64 6.06L0 24l6.12-1.6A11.9 11.9 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.22-3.48-8.52ZM12 22a9.94 9.94 0 0 1-5.07-1.38l-.36-.22-3.63.95.97-3.54-.24-.37A9.94 9.94 0 1 1 22 12a9.93 9.93 0 0 1-10 10Zm5.45-7.46c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15s-.77.96-.94 1.16c-.17.2-.35.22-.64.07a8.1 8.1 0 0 1-2.39-1.48 9.1 9.1 0 0 1-1.68-2.08c-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.01-1.04 2.47 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.1 4.5.72.3 1.27.48 1.7.61.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.28.17-1.41-.07-.12-.27-.2-.57-.35Z"/></svg>
+</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const nome = document.getElementById('nome').value.trim();
+    const tel = document.getElementById('telefone').value.trim();
+    const desc = document.getElementById('descricao').value.trim();
+    const msg = encodeURIComponent(
+      `Olá, meu nome é ${nome}. Telefone: ${tel}. ${desc}`
+    );
+    window.open(`https://wa.me/5591992433543?text=${msg}`, '_blank');
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
