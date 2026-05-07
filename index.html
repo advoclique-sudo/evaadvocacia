@@ -4,24 +4,103 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="Oliveira & Barata Advocacia — Defesa dos seus direitos trabalhistas com estratégia, dedicação e experiência. Atuação completa em todas as fases do processo do trabalho." />
-<title>Oliveira & Barata Advocacia — Direito Trabalhista</title>
+<meta name="keywords" content="advogado trabalhista, advocacia trabalhista, direitos trabalhistas, verbas rescisórias, horas extras, demissão injusta, Belém, Pará, Oliveira Barata Advocacia" />
+<meta name="author" content="Oliveira & Barata Advocacia" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://oliveiraebarataadv.com.br/" />
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18117145756"></script>
+<!-- Open Graph / Social -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:url" content="https://oliveiraebarataadv.com.br/" />
+<meta property="og:title" content="Oliveira & Barata Advocacia — Direito Trabalhista" />
+<meta property="og:description" content="Defesa dos seus direitos trabalhistas com estratégia, dedicação e experiência. Consulta inicial gratuita." />
+<meta property="og:site_name" content="Oliveira & Barata Advocacia" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Oliveira & Barata Advocacia — Direito Trabalhista" />
+<meta name="twitter:description" content="Defesa dos seus direitos trabalhistas com estratégia, dedicação e experiência." />
+
+<title>Oliveira & Barata Advocacia — Direito Trabalhista | Belém-PA</title>
+
+<!-- Google Search Console verification -->
+<meta name="google-site-verification" content="xcdGL5xXOSA7XKzGGlZCXtwO4qXeDEynRBKrGGPNFQU" />
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WSMV8W48');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google tag (gtag.js) — Google Ads + Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XKWQTQBXZ3"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  // Google Ads
   gtag('config', 'AW-18117145756');
+  // Google Analytics 4
+  gtag('config', 'G-XKWQTQBXZ3');
 </script>
 
-<!-- Event snippet for Clique de saída conversion page -->
+<!-- Conversion helper: dispara conversão no clique do WhatsApp / envio do formulário -->
 <script>
-  gtag('event', 'conversion', {
-    'send_to': 'AW-18117145756/nhsqCNbYg6QcEJzp9r5D',
-    'value': 1.0,
-    'currency': 'BRL'
+  function gtagReportConversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined' && url) {
+        window.open(url, '_blank');
+      }
+    };
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18117145756/nhsqCNbYg6QcEJzp9r5D',
+        'value': 1.0,
+        'currency': 'BRL',
+        'event_callback': callback
+      });
+    } else if (url) {
+      window.open(url, '_blank');
+    }
+    return false;
+  }
+  // Auto-attach: tracks all wa.me clicks as conversions
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('a[href*="wa.me/"]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-18117145756/nhsqCNbYg6QcEJzp9r5D',
+            'value': 1.0,
+            'currency': 'BRL'
+          });
+          gtag('event', 'whatsapp_click', {
+            'event_category': 'engagement',
+            'event_label': a.href
+          });
+        }
+      });
+    });
   });
+</script>
+
+<!-- Schema.org — LegalService -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Oliveira & Barata Advocacia",
+  "description": "Advocacia especializada em direito trabalhista. Defesa dos direitos do trabalhador com estratégia, dedicação e experiência.",
+  "url": "https://oliveiraebarataadv.com.br/",
+  "telephone": "+55-91-98282-7111",
+  "areaServed": "BR",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "BR"
+  }
+}
 </script>
 
 <!-- Fontes -->
@@ -983,6 +1062,11 @@
 </head>
 <body>
 
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSMV8W48"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <!-- ============ HEADER ============ -->
 <header class="site-header">
   <div class="container nav">
@@ -1441,6 +1525,19 @@
     const msg = encodeURIComponent(
       `Olá, meu nome é ${nome}. Telefone: ${tel}. ${desc}`
     );
+    // Fire Google Ads conversion + GA4 form_submit event
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18117145756/nhsqCNbYg6QcEJzp9r5D',
+        'value': 1.0,
+        'currency': 'BRL'
+      });
+      gtag('event', 'generate_lead', {
+        'event_category': 'form',
+        'event_label': 'contact_form_whatsapp',
+        'value': 1
+      });
+    }
     window.open(`https://wa.me/5591982827111?text=${msg}`, '_blank');
   }
 
